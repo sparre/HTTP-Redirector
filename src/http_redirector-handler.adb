@@ -2,6 +2,10 @@ with
   Ada.Strings.Unbounded,
   Ada.Text_IO;
 
+with
+  AWS.Parameters,
+  AWS.URL;
+
 package body HTTP_Redirector.Handler is
    function Callback return AWS.Response.Callback is
    begin
@@ -9,6 +13,8 @@ package body HTTP_Redirector.Handler is
    end Callback;
 
    function Response (Request : in AWS.Status.Data) return AWS.Response.Data is
+      Host       : String renames AWS.Status.Host (Request);
+      Parameters : AWS.Parameters.List renames AWS.Status.Parameters (Request);
    begin
       Log :
       declare
@@ -16,18 +22,17 @@ package body HTTP_Redirector.Handler is
          use AWS.Status;
          Buffer : Unbounded_String;
       begin
-         Append (Buffer, """" & URI (Request) & """ ");
          Append (Buffer, """" & URL (Request) & """ ");
 
          Append (Buffer, "{");
-         for Index in 1 .. Parameters (Request).Count loop
+         for Index in 1 .. Parameters.Count loop
             if Index > 1 then
                Append (Buffer, ", ");
             end if;
 
-            Append (Buffer, String'(Parameters (Request).Get_Name  (Index)));
+            Append (Buffer, String'(Parameters.Get_Name  (Index)));
             Append (Buffer, "=");
-            Append (Buffer, String'(Parameters (Request).Get_Value (Index)));
+            Append (Buffer, String'(Parameters.Get_Value (Index)));
          end loop;
          Append (Buffer, "}");
 
@@ -35,7 +40,12 @@ package body HTTP_Redirector.Handler is
                    Item => To_String (Buffer));
       end Log;
 
-      return
-        AWS.Response.URL (Location => "http://www.jacob-sparre.dk/ny-forside");
+      if Host = "dr.peytzmail.com" then
+         return AWS.Response.URL
+                  (Location => AWS.URL.Decode (Parameters.Get ("t")));
+      else
+         return AWS.Response.URL
+                  (Location => "http://www.jacob-sparre.dk/ny-forside");
+      end if;
    end Response;
 end HTTP_Redirector.Handler;
