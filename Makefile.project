@@ -1,6 +1,7 @@
-PROJECT=The_Project
+PROJECT=HTTP_Redirector
 
-GENERATED_EXECUTABLES=bin/$(LC_PROJECT)-demo
+GENERATED_EXECUTABLES=bin/$(LC_PROJECT)-demo \
+                      bin/$(LC_PROJECT)-server
 
 GENERATED_SOURCES=
 
