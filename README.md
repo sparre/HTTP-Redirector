@@ -11,7 +11,9 @@ Currently supported tracking redirectors:
 
 Other domain names you may want to point to your private HTTP redirector:
 
+* b.scorecardresearch.com
 * cdn.userreport.com
+* edge.quantserve.com
 * www.google-analytics.com
 
 
@@ -32,17 +34,21 @@ Installing
 ----------
 
 ```
-   make install
+   OS_VERSION=unix make install
 ```
 
-You can adjust the installation location with `PREFIX` and `DESTDIR`.
+Builds and tests the executable before installing it in
+"${DESTDIR}${PREFIX}/bin" (where "${PREFIX}" defaults to "${HOME}").
+
+Installing may also work on Windows, if you substitute "OS_VERSION=unix" with
+"OS_VERSION=windows".
 
 
 Testing
 -------
 
 ```
-   make test
+   OS_VERSION=unix make test
 ```
 
 
@@ -50,7 +56,7 @@ Building
 --------
 
 ```
-   make build
+   OS_VERSION=unix make build
 ```
 
 
