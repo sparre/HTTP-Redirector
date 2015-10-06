@@ -25,6 +25,7 @@ Build dependencies
 * Perl
 * Wget
 * Tar
+* AWS (the Ada Web Server library)
 
 
 Installing
