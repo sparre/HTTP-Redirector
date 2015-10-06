@@ -3,6 +3,7 @@ with
   Ada.Text_IO;
 
 with
+  AWS.Messages,
   AWS.Parameters,
   AWS.URL;
 
@@ -44,8 +45,10 @@ package body HTTP_Redirector.Handler is
          return AWS.Response.URL
                   (Location => AWS.URL.Decode (Parameters.Get ("t")));
       else
-         return AWS.Response.URL
-                  (Location => "http://www.jacob-sparre.dk/ny-forside");
+         return AWS.Response.Build
+                  (Content_Type  => "text/plain",
+                   Message_Body  => "Untracked.",
+                   Cache_Control => AWS.Messages.Prevent_Cache);
       end if;
    end Response;
 end HTTP_Redirector.Handler;
