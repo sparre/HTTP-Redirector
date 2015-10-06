@@ -9,6 +9,11 @@ Currently supported tracking redirectors:
 
 * dr.peytzmail.com
 
+Other domain names you may want to point to your private HTTP redirector:
+
+* cdn.userreport.com
+* www.google-analytics.com
+
 
 Build dependencies
 ------------------
