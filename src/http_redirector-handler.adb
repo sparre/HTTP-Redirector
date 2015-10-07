@@ -1,4 +1,5 @@
 with
+  Ada.Strings.Fixed,
   Ada.Strings.Unbounded,
   Ada.Text_IO;
 
@@ -44,6 +45,15 @@ package body HTTP_Redirector.Handler is
       if Host = "dr.peytzmail.com" then
          return AWS.Response.URL
                   (Location => AWS.URL.Decode (Parameters.Get ("t")));
+      elsif Host = "universitetsavisen.nyhedsbrev.f2.peytz.dk" then
+         declare
+            use Ada.Strings.Fixed;
+            With_ID : String renames Parameters.Get_Name (1);
+            Cut     : Natural renames Index (With_ID, "-http");
+         begin
+            return AWS.Response.URL
+                     (Location => With_ID (Cut + 1 .. With_ID'Last));
+         end;
       else
          return AWS.Response.Build
                   (Content_Type  => "text/plain",

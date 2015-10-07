@@ -8,6 +8,7 @@ tracking redirector.
 Currently supported tracking redirectors:
 
 * dr.peytzmail.com
+* universitetsavisen.nyhedsbrev.f2.peytz.dk
 
 Other domain names you may want to point to your private HTTP redirector:
 
