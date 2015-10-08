@@ -9,13 +9,19 @@ Currently supported tracking redirectors:
 
 * dr.peytzmail.com
 * universitetsavisen.nyhedsbrev.f2.peytz.dk
+* tr.anpdm.com
 
 Other domain names you may want to point to your private HTTP redirector:
 
 * b.scorecardresearch.com
 * cdn.userreport.com
+* easeniro.information.dk
 * edge.quantserve.com
+* gadk.hit.gemius.pl
+* pagead2.googlesyndication.com
+* partner.googleadservices.com
 * www.google-analytics.com
+* www.googleadservices.com
 
 
 Build dependencies

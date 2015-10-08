@@ -45,6 +45,22 @@ package body HTTP_Redirector.Handler is
       if Host = "dr.peytzmail.com" then
          return AWS.Response.URL
                   (Location => AWS.URL.Decode (Parameters.Get ("t")));
+      elsif Host = "tr.anpdm.com" then
+         declare
+            use Ada.Strings.Fixed;
+         begin
+            for Index in reverse 1 .. Parameters.Count loop
+               if Head (Parameters.Get_Name (Index), 4) = "http" then
+                  return AWS.Response.URL
+                           (Location => Parameters.Get_Name (Index));
+               end if;
+            end loop;
+
+            return AWS.Response.Build
+                     (Content_Type  => "text/plain",
+                      Message_Body  => "Untracked.",
+                      Cache_Control => AWS.Messages.Prevent_Cache);
+         end;
       elsif Host = "universitetsavisen.nyhedsbrev.f2.peytz.dk" then
          declare
             use Ada.Strings.Fixed;
