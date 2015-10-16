@@ -13,15 +13,34 @@ Currently supported tracking redirectors:
 
 Other domain names you may want to point to your private HTTP redirector:
 
+* ad.linksynergy.com
 * b.scorecardresearch.com
+* bt.tns-gallup.dk
 * cdn.userreport.com
+* dr.tns-gallup.dk
 * easeniro.information.dk
 * edge.quantserve.com
 * gadk.hit.gemius.pl
+* ho.idtargeting.com
+* information.tns-gallup.dk
+* ing.tns-gallup.dk
+* int.sitestat.com
+* kt.tns-gallup.dk
+* meter-svc.nytimes.com
 * pagead2.googlesyndication.com
 * partner.googleadservices.com
-* www.google-analytics.com
+* pol.tns-gallup.dk
+* raeson.tns-gallup.dk
+* sb.scorecardresearch.com
+* s.effectivemeasure.net
+* smetrics.washingtonpost.com
+* tag.userreport.com
+* tracead.com
+* track.idtargeting.com
+* tv2.tns-gallup.dk
+* version2.tns-gallup.dk
 * www.googleadservices.com
+* www.google-analytics.com
 
 
 Build dependencies
