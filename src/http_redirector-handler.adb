@@ -42,7 +42,9 @@ package body HTTP_Redirector.Handler is
                    Item => To_String (Buffer));
       end Log;
 
-      if Host = "dr.peytzmail.com" then
+      if Host = "dm.peytzmail.com" or else
+         Host = "dr.peytzmail.com"
+      then
          return AWS.Response.URL
                   (Location => AWS.URL.Decode (Parameters.Get ("t")));
       elsif Host = "tr.anpdm.com" then

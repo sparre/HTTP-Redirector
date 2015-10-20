@@ -7,6 +7,7 @@ tracking redirector.
 
 Currently supported tracking redirectors:
 
+* dm.peytzmail.com
 * dr.peytzmail.com
 * universitetsavisen.nyhedsbrev.f2.peytz.dk
 * tr.anpdm.com
