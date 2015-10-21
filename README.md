@@ -18,6 +18,7 @@ Other domain names you may want to point to your private HTTP redirector:
 * b.scorecardresearch.com
 * bt.tns-gallup.dk
 * cdn.userreport.com
+* c.statcounter.com
 * dr.tns-gallup.dk
 * easeniro.information.dk
 * edge.quantserve.com
@@ -33,12 +34,15 @@ Other domain names you may want to point to your private HTTP redirector:
 * pol.tns-gallup.dk
 * raeson.tns-gallup.dk
 * sb.scorecardresearch.com
+* securepubads.g.doubleclick.net
 * s.effectivemeasure.net
 * smetrics.washingtonpost.com
 * tag.userreport.com
 * tracead.com
 * track.idtargeting.com
 * tv2.tns-gallup.dk
+* us-ads.openx.net
+* us-u.openx.net
 * version2.tns-gallup.dk
 * www.googleadservices.com
 * www.google-analytics.com
