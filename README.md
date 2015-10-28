@@ -37,6 +37,7 @@ Other domain names you may want to point to your private HTTP redirector:
 * securepubads.g.doubleclick.net
 * s.effectivemeasure.net
 * smetrics.washingtonpost.com
+* stats.bbc.co.uk
 * tag.userreport.com
 * tracead.com
 * track.idtargeting.com
