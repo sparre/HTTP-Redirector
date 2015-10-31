@@ -11,6 +11,7 @@ Currently supported tracking redirectors:
 * dr.peytzmail.com
 * universitetsavisen.nyhedsbrev.f2.peytz.dk
 * tr.anpdm.com
+* mkt.alitalia.it
 
 Other domain names you may want to point to your private HTTP redirector:
 

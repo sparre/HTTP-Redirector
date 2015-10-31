@@ -47,6 +47,23 @@ package body HTTP_Redirector.Handler is
       then
          return AWS.Response.URL
                   (Location => AWS.URL.Decode (Parameters.Get ("t")));
+      elsif Host = "mkt.alitalia.it" then
+         declare
+            Full : constant String :=
+                     AWS.URL.Decode (Parameters.Get ("target"));
+            Cut  : Natural;
+            use Ada.Strings.Fixed;
+         begin
+            Cut := Index (Source => Full, Pattern => "&");
+
+            if Cut = 0 then
+               return
+                 AWS.Response.URL (Location => Full);
+            else
+               return
+                 AWS.Response.URL (Location => Full (Full'First .. Cut - 1));
+            end if;
+         end;
       elsif Host = "tr.anpdm.com" then
          declare
             use Ada.Strings.Fixed;
