@@ -43,6 +43,7 @@ package body HTTP_Redirector.Handler is
       end Log;
 
       if Host = "dm.peytzmail.com" or else
+         Host = "t.signauxsept.com" or else
          Host = "dr.peytzmail.com"
       then
          return AWS.Response.URL
