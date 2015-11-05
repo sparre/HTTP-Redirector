@@ -21,6 +21,7 @@ Other domain names you may want to point to your private HTTP redirector:
 * bt.tns-gallup.dk
 * cdn.userreport.com
 * c.statcounter.com
+* dong2.netminers.dk
 * dr.tns-gallup.dk
 * easeniro.information.dk
 * edge.quantserve.com
