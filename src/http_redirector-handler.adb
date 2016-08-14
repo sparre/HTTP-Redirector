@@ -91,6 +91,65 @@ package body HTTP_Redirector.Handler is
             return AWS.Response.URL
                      (Location => With_ID (Cut + 1 .. With_ID'Last));
          end;
+      elsif Host = "mandrillapp.com" then
+         --  http://mandrillapp.com/track/click/30495899/www.san-giorgio.dk?...
+         declare
+            Full     : constant String := AWS.Status.URL (Request);
+            From, To : Natural := Full'First - 1;
+            use Ada.Strings.Fixed;
+         begin
+            for Slice in 1 .. 6 loop
+               From := Index (Source  => Full (From + 1 .. Full'Last),
+                              Pattern => "/");
+            end loop;
+
+            To := Index (Source  => Full (From + 1 .. Full'Last),
+                         Pattern => "?");
+
+            if From = 0 then
+               From := Full'First;
+               To   := Full'Last;
+            elsif To = 0 then
+               From := From + 1;
+               To   := Full'Last;
+            else
+               From := From + 1;
+               To   := To - 1;
+            end if;
+
+            return
+              AWS.Response.URL (Location => "http://" & Full (From .. To));
+         end;
+      elsif Host = "www2.mm.dk" then
+         --  http://www2.mm.dk/e/120362/verden-bliver-skabt-af-loegne-/...
+         declare
+            Full     : constant String := AWS.Status.URL (Request);
+            From, To : Natural := Full'First - 1;
+            use Ada.Strings.Fixed;
+         begin
+            for Slice in 1 .. 5 loop
+               From := Index (Source  => Full (From + 1 .. Full'Last),
+                              Pattern => "/");
+            end loop;
+
+            To := Index (Source  => Full (From + 1 .. Full'Last),
+                         Pattern => "-/");
+
+            if From = 0 then
+               From := Full'First;
+               To   := Full'Last;
+            elsif To = 0 then
+               From := From + 1;
+               To   := Full'Last;
+            else
+               From := From + 1;
+               To   := To - 1;
+            end if;
+
+            return
+              AWS.Response.URL (Location => "http://www.mm.dk/" &
+                                            Full (From .. To));
+         end;
       else
          return AWS.Response.Build
                   (Content_Type  => "text/plain",

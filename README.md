@@ -14,6 +14,8 @@ Currently supported tracking redirectors:
 * tr.anpdm.com
 * mkt.alitalia.it
 * t.signauxsept.com
+* mandrillapp.com
+* www2.mm.dk
 
 Other domain names you may want to point to your private HTTP redirector:
 
@@ -26,14 +28,18 @@ Other domain names you may want to point to your private HTTP redirector:
 * dr.tns-gallup.dk
 * easeniro.information.dk
 * edge.quantserve.com
+* fonts.googleapis.com
 * gadk.hit.gemius.pl
+* googleads.g.doubleclick.net
 * ho.idtargeting.com
 * information.tns-gallup.dk
 * ing.tns-gallup.dk
 * int.sitestat.com
 * kt.tns-gallup.dk
 * meter-svc.nytimes.com
+* pagead1.googlesyndication.com
 * pagead2.googlesyndication.com
+* pagead3.googlesyndication.com
 * partner.googleadservices.com
 * pol.tns-gallup.dk
 * raeson.tns-gallup.dk
